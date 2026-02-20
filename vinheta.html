@@ -81,9 +81,11 @@
         
         <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
         <div class="row mt-5">
-            <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
+            <!-- <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
                 <button class="buttonStep1">Final Survey</button>
-            </a>
+            </a> -->
+            <button class="buttonStep1" onclick="continueStudy()">Continue</button>
+
         </div>
     </div>
     <div class="container">
@@ -93,18 +95,47 @@
         <div class="row mt-5"></div>
     </div>
     <script>
-    document.getElementById("playButton").addEventListener("click", function () {
-        document.getElementById("gameContainer").style.display = "block";
-        this.style.display = "none";
+        document.getElementById("playButton").addEventListener("click", function () 
+        {
+            document.getElementById("gameContainer").style.display = "block";
+            this.style.display = "none";
 
-        // Resume Unity
-        if (typeof unityInstance !== "undefined") {
-            unityInstance.SendMessage(
-                "GameManager",   // GameObject name
-                "StartGame"      // Method name
-            );
+            // Resume Unity
+            if (typeof unityInstance !== "undefined") {
+                unityInstance.SendMessage(
+                    "GameManager",   // GameObject name
+                    "StartGame"      // Method name
+                );
+            }
+        });
+
+    function continueStudy() 
+    {
+        // Pede os dados ao Unity
+        var jsonData = unityInstance.SendMessage(
+            "WebGLBridge",
+            "GetGameData"
+        );
+
+        fetch("https://script.google.com/macros/s/AKfycbwoO5AJigLKlyHjdT9SmynwsWaMUiUI4xtfgg93qbyAAioy-DlPs1jeOPaKam23uv1W3A/exec", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: jsonData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("Upload success:", data);
+            window.location.href = "finalSurvey.html";
+        })
+        .catch(error => {
+            console.error("Upload error:", error);
+            window.location.href = "finalSurvey.html";
+        });
         }
-    });
-    </script>
+   
+</script>
+
 </body>
 </html>
