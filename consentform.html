@@ -61,7 +61,9 @@
             load++;
 
             // Scroll page to top of iframe whenever it reloads
+           if (load > 1) {
             iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
 
             // Redirect after submission (keep your original logic)
             if (load > 3) {
