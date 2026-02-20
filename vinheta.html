@@ -7,177 +7,83 @@
     <!-- CSS LINK -->
     <link rel="stylesheet" href="stylesheet.css">
     <!-- BOOTSTRAP LINK -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <script>
+
+<script>
+    // Unity calls this automatically via TeamFeedbackManager.SendDataToJS
     var gameDataJson = null;
 
-    // Listen for messages from Unity iframe
-    window.addEventListener("message", function(event) {
-        // Optional: verify origin
-        // if (event.origin !== "https://yourdomain.com") return;
-
-        if (event.data && event.data.type === "gameData") {
-            gameDataJson = event.data.data;
-            console.log("Data received from Unity:", gameDataJson);
-        }
-    });
+    function ReceiveGameDataFromUnity(jsonData) {
+        gameDataJson = jsonData;
+        console.log("Data received from Unity:", gameDataJson);
+    }
 
     function continueStudy() {
-        if (!gameDataJson) {
-            alert("Waiting for game data...");
-            return;
-        }
-
-        fetch("https://script.google.com/macros/s/AKfycbxJPn9O8qn3Kp3NT7YW5teDf6na6ga8VdWS1TJhvDSwJx5lyXscIfoTgI23O-GL1spYwQ/exec", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: gameDataJson
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Upload success:", data);
-            window.location.href = "finalSurvey.html";
-        })
-        .catch(error => {
-            console.error("Upload error:", error);
-            window.location.href = "finalSurvey.html";
-        });
+        // Data is already sent by Unity. Just redirect.
+        window.location.href = "finalSurvey.html";
     }
 </script>
-    <!-- Logo -->
-   <div class="container mt-4">
-            <div class="row">
-                <div class="col-lg-2 mt-2"><img src="logo_H1.png" class="logo"></div>
-                <div class="col-lg-2"><img src="logoInesc.png" class="logo"></div>
-                <div class="col-lg-2 mt-3"><img src="logoIst.png" class="logo"></div>
-            </div>
+
+<!-- Logos -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-2 mt-2"><img src="logo_H1.png" class="logo"></div>
+        <div class="col-lg-2"><img src="logoInesc.png" class="logo"></div>
+        <div class="col-lg-2 mt-3"><img src="logoIst.png" class="logo"></div>
     </div>
+</div>
 
-    <div class="container section" id="section3" style="margin-top: 5%;">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <h1 style="text-align: center;" class="stepTitle nunito">STEP 2</h1>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                <div class="col-lg-8">
-                    <p style="text-align: center; margin-top: 5%;">In this step, you will <span>play a game</span> with the help of your <span>AI team member</span></p>
-                    <p style="text-align: center;">to capture demons that were accidentaly summoned by a wizard.</p>
-                     
-        
-                    <br>
-                </div>
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                 <div><hr></div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-12">
-                    <p style="text-align: center;">You will have a tutorial in the game to help you understand the game.</p>
-                    <p style="text-align: center;">Please, do not skip the tutorial.</p>
-                    <p style="text-align: center; font-size: 30px;"><span>Have fun!</span></p>
-                </div>
-            </div>
-            <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
-            
-            <!-- Video vignette content goes here -->
-            <div class="col-lg-12 d-flex justify-content-center">
-                <div style="
-                    width: 960px;
-                    height: 540px;
-                    overflow: hidden;
-                    position: relative;
-                ">
-                    <iframe src="WGL5/index.html"
-                            width="1920"
-                            height="1080"
-                            style="
-                                border:none;
-                                transform: scale(0.5);
-                                transform-origin: top left;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                            ">
-                    </iframe>
-                </div>
-            </div>
-            <script>
-var gameDataJson = null;
-
-function ReceiveGameDataFromUnity(jsonData) {
-    gameDataJson = jsonData;
-    console.log("Data received from Unity:", gameDataJson);
-}
-
-function continueStudy() {
-    if (!gameDataJson) {
-        console.warn("No game data received yet!");
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbxJPn9O8qn3Kp3NT7YW5teDf6na6ga8VdWS1TJhvDSwJx5lyXscIfoTgI23O-GL1spYwQ/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: gameDataJson
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log("Upload success:", data);
-        window.location.href = "finalSurvey.html";
-    })
-    .catch(error => {
-        console.error("Upload error:", error);
-        window.location.href = "finalSurvey.html";
-    });
-}
-</script>
-
-        
-        <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
+<div class="container section" id="section3" style="margin-top: 5%;">
+    <div class="container">
         <div class="row mt-5">
-            <!-- <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
-                <button class="buttonStep1">Final Survey</button>
-            </a> -->
-            <button class="buttonStep1" onclick="continueStudy()">Continue</button>
+            <div class="col-lg-12">
+                <h1 style="text-align: center;" class="stepTitle nunito">STEP 2</h1>
+            </div>
+        </div>
 
+        <div class="row mt-2">
+            <div class="col-lg-2"><img src="Arrows.png"></div>
+            <div class="col-lg-8" style="text-align:center; margin-top:5%;">
+                <p>In this step, you will <span>play a game</span> with the help of your <span>AI team member</span></p>
+                <p>to capture demons that were accidentally summoned by a wizard.</p>
+            </div>
+            <div class="col-lg-2"><img src="Arrows.png"></div>
+        </div>
+        <hr>
+
+        <div class="row mt-4">
+            <div class="col-lg-12" style="text-align:center;">
+                <p>You will have a tutorial in the game to help you understand the game.</p>
+                <p>Please, do not skip the tutorial.</p>
+                <p style="font-size: 30px;"><span>Have fun!</span></p>
+            </div>
+        </div>
+        <hr style="margin-top:3%; margin-bottom:5%;">
+
+        <!-- Game iframe -->
+        <div class="col-lg-12 d-flex justify-content-center">
+            <div style="width:960px; height:540px; overflow:hidden; position:relative;">
+                <iframe src="WGL5/index.html"
+                        width="1920"
+                        height="1080"
+                        style="border:none; transform: scale(0.5); transform-origin: top left; position:absolute; top:0; left:0;">
+                </iframe>
+            </div>
+        </div>
+
+        <hr style="margin-top:3%; margin-bottom:5%;">
+
+        <div class="row mt-5">
+            <button class="buttonStep1" onclick="continueStudy()">Continue</button>
         </div>
     </div>
-    <div class="container">
-        <div class="row mt-5"></div>
-    </div>
-    <div class="container">
-        <div class="row mt-5"></div>
-    </div>
-    <script>
-        document.getElementById("playButton").addEventListener("click", function () 
-        {
-            document.getElementById("gameContainer").style.display = "block";
-            this.style.display = "none";
-
-            // Resume Unity
-            if (typeof unityInstance !== "undefined") {
-                unityInstance.SendMessage(
-                    "GameManager",   // GameObject name
-                    "StartGame"      // Method name
-                );
-            }
-        });
-   
-</script>
-
+</div>
 
 </body>
 </html>
