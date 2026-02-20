@@ -56,14 +56,11 @@
 
         iframe.onload = function () {
             load++;
+            
+            if (load > 1) {
+                iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
 
-            // Always scroll to the top of the iframe when it reloads
-            iframe.scrollIntoView({ behavior: "smooth", block: "start" });
-
-            /* // Redirect after final submission
-            if (load > 3) {
-                document.location.href = "vinheta.html";
-            } */
         };
     </script>
 </body>
