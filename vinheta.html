@@ -78,12 +78,45 @@
                     </iframe>
                 </div>
             </div>
+            <script>
+var gameDataJson = null;
+
+function ReceiveGameDataFromUnity(jsonData) {
+    gameDataJson = jsonData;
+    console.log("Data received from Unity:", gameDataJson);
+}
+
+function continueStudy() {
+    if (!gameDataJson) {
+        console.warn("No game data received yet!");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/SEU_SCRIPT_ID/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: gameDataJson
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Upload success:", data);
+        window.location.href = "finalSurvey.html";
+    })
+    .catch(error => {
+        console.error("Upload error:", error);
+        window.location.href = "finalSurvey.html";
+    });
+}
+</script>
+
         
         <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
         <div class="row mt-5">
-            <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
+            <!-- <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
                 <button class="buttonStep1">Final Survey</button>
-            </a>
+            </a> -->
+            <button class="buttonStep1" onclick="continueStudy()">Continue</button>
+
         </div>
     </div>
     <div class="container">
@@ -93,18 +126,22 @@
         <div class="row mt-5"></div>
     </div>
     <script>
-    document.getElementById("playButton").addEventListener("click", function () {
-        document.getElementById("gameContainer").style.display = "block";
-        this.style.display = "none";
+        document.getElementById("playButton").addEventListener("click", function () 
+        {
+            document.getElementById("gameContainer").style.display = "block";
+            this.style.display = "none";
 
-        // Resume Unity
-        if (typeof unityInstance !== "undefined") {
-            unityInstance.SendMessage(
-                "GameManager",   // GameObject name
-                "StartGame"      // Method name
-            );
-        }
-    });
-    </script>
+            // Resume Unity
+            if (typeof unityInstance !== "undefined") {
+                unityInstance.SendMessage(
+                    "GameManager",   // GameObject name
+                    "StartGame"      // Method name
+                );
+            }
+        });
+   
+</script>
+
+
 </body>
 </html>
