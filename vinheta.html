@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,14 +19,31 @@
     <script>
         var gameDataJson = null;
 
-        // Called by Unity WebGL when the game ends
         function ReceiveGameDataFromUnity(jsonData) {
             gameDataJson = jsonData;
-            console.log("Data received from Unity:", gameDataJson);
+            console.log("✅ Data received from Unity:", gameDataJson);
+            document.title = "Data Ready ✅"; // visual confirmation
         }
 
         function continueStudy() {
-             window.location.href = "finalSurvey.html";
+            if (!gameDataJson) {
+                alert("Waiting for game data... Please finish the game first.");
+                return;
+            }
+
+            fetch("https://script.google.com/macros/s/AKfycbwviVqxfIdMkK5IIJtUWEOIbOlw1Z8C_FEfzYlHOqXvLo3Hfafy3C3UV7H3Unmgzfr5/exec", {
+                method: "POST",
+                body: gameDataJson  // no Content-Type header — avoids CORS preflight
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("✅ Upload success:", data);
+                window.location.href = "finalSurvey.html";
+            })
+            .catch(error => {
+                console.error("❌ Upload error:", error);
+                window.location.href = "finalSurvey.html"; // still redirect
+            });
         }
     </script>
     <!-- ============================================================== -->
