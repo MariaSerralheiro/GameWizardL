@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,26 +26,7 @@
         }
 
         function continueStudy() {
-            if (!gameDataJson) {
-                alert("Waiting for game data... Please finish the game first.");
-                return;
-            }
-
-            fetch("https://script.google.com/macros/s/AKfycbwQsCpImdFXBj3RVGCKneU1_16dz2jaVqO8M-hjw3yHwDkL3mKZKOB-oSWo-37R7-FWsQ/exec", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: gameDataJson
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log("Upload success:", data);
-                window.location.href = "finalSurvey.html";
-            })
-            .catch(error => {
-                console.error("Upload error:", error);
-                // Still redirect even if upload fails so the study continues
-                window.location.href = "finalSurvey.html";
-            });
+             window.location.href = "finalSurvey.html";
         }
     </script>
     <!-- ============================================================== -->
