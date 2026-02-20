@@ -78,6 +78,37 @@
                     </iframe>
                 </div>
             </div>
+            <script>
+var gameDataJson = null;
+
+function ReceiveGameDataFromUnity(jsonData) {
+    gameDataJson = jsonData;
+    console.log("Data received from Unity:", gameDataJson);
+}
+
+function continueStudy() {
+    if (!gameDataJson) {
+        console.warn("No game data received yet!");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/SEU_SCRIPT_ID/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: gameDataJson
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Upload success:", data);
+        window.location.href = "finalSurvey.html";
+    })
+    .catch(error => {
+        console.error("Upload error:", error);
+        window.location.href = "finalSurvey.html";
+    });
+}
+</script>
+
         
         <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
         <div class="row mt-5">
@@ -108,34 +139,9 @@
                 );
             }
         });
-
-    function continueStudy() 
-    {
-        // Pede os dados ao Unity
-        var jsonData = unityInstance.SendMessage(
-            "WebGLBridge",
-            "GetGameData"
-        );
-
-        fetch("https://script.google.com/macros/s/AKfycbwoO5AJigLKlyHjdT9SmynwsWaMUiUI4xtfgg93qbyAAioy-DlPs1jeOPaKam23uv1W3A/exec", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json"
-            },
-            body: jsonData
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log("Upload success:", data);
-            window.location.href = "finalSurvey.html";
-        })
-        .catch(error => {
-            console.error("Upload error:", error);
-            window.location.href = "finalSurvey.html";
-        });
-        }
    
 </script>
+
 
 </body>
 </html>
