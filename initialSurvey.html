@@ -3,80 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAIC Study Step1</title>
-    <!-- CSS LINK -->
+    <title>HAIC Study — Initial Questionnaire</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <!-- BOOTSTRAP LINK -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Hide the ProlificID field in the iframe */
-        .hidden-field {
-            display: none;
-        }
-    </style>
 </head>
-
-<body>
-    <!-- Logo -->
-    <div class="container mt-4">
-            <div class="row">
-                <div class="col-lg-2 mt-2"><img src="logo_H1.png" class="logo"></div>
-                <div class="col-lg-2"><img src="logoInesc.png" class="logo"></div>
-                <div class="col-lg-2 mt-3"><img src="logoIst.png" class="logo"></div>
-            </div>
-    </div>
-
-    <div class="container section" id="section3" style="margin-top: 2%;">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <h1 style="text-align: center;" class="stepTitle nunito">STEP 1</h1>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                <div class="col-lg-8">
-                    <p style="text-align: center;">Please respond to the following questions concerning your demographic information, prior experience with technology and artificial intelligence.</p>
-                    <p style="text-align: center;"> This step will allow us to characterise the participants of the study.</p> 
-                </div>
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                    <div><hr></div>
-                </div>
-            </div>
-            
-            <!-- Embed Google Form -->
-           
-             <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdJXsaRg2u3ABqtdVZVAoiEIWrZLdtyNhBLTA86FutC8ldjEg/viewform?embedded=true" width="100%" height="6900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-           
+<body class="survey-page">
+    <header class="survey-header">
+        <div class="survey-shell logo-row" aria-label="Study partners">
+            <img src="logo_H1.png" class="logo" alt="HAIC">
+            <img src="logoInesc.png" class="logo" alt="INESC-ID">
+            <img src="logoIst.png" class="logo" alt="Instituto Superior Técnico">
         </div>
-    </div>
+    </header>
+
+    <main class="survey-shell">
+        <section class="survey-intro">
+            <p class="survey-step" id="survey-progress">Step 1 — identification</p>
+            <h1>Initial Questionnaire</h1>
+            <p>Please answer the following questions before playing the game.</p>
+            <p class="survey-meta">All questions marked with <span aria-hidden="true">*</span> are required.</p>
+        </section>
+
+        <form id="initial-questionnaire">
+            <section class="survey-card" id="initial-id-section" aria-labelledby="participant-title">
+                <div class="survey-card-heading">
+                    <span class="section-number">01</span>
+                    <div><h2 id="participant-title">Participant details</h2><p>Enter the Prolific ID associated with your participation.</p></div>
+                </div>
+                <div class="text-question">
+                    <label class="question-label" for="initial-prolific-id">Prolific ID <span aria-hidden="true">*</span></label>
+                    <input class="text-input" id="initial-prolific-id" name="prolificId" type="text" autocomplete="off" required>
+                </div>
+                <div class="participant-actions"><button class="survey-submit" id="continue-to-initial-questionnaire" type="button">Continue to questionnaire</button></div>
+            </section>
+
+            <div id="initial-questionnaire-content" hidden>
+                <section class="survey-card survey-section-header" aria-labelledby="background-title">
+                    <div class="survey-card-heading">
+                        <span class="section-number">02</span>
+                        <div><h2 id="background-title" tabindex="-1">About you</h2><p>Tell us about your gaming experience and educational background.</p></div>
+                    </div>
+                </section>
+
+                <section class="survey-card survey-question-card" aria-labelledby="gaming-frequency-title">
+                    <fieldset class="choice-question first-question">
+                        <legend id="gaming-frequency-title"><span class="subquestion-number">02.1</span> How often do you play video games? <span aria-hidden="true">*</span></legend>
+                        <label class="choice-row"><input type="radio" name="gamingFrequency" value="never" required><span>Never</span></label>
+                        <label class="choice-row"><input type="radio" name="gamingFrequency" value="rarely"><span>Rarely (a few times a year)</span></label>
+                        <label class="choice-row"><input type="radio" name="gamingFrequency" value="sometimes"><span>Sometimes (a few times a month)</span></label>
+                        <label class="choice-row"><input type="radio" name="gamingFrequency" value="often"><span>Often (a few times a week)</span></label>
+                        <label class="choice-row"><input type="radio" name="gamingFrequency" value="daily"><span>Daily</span></label>
+                    </fieldset>
+                </section>
+
+                <section class="survey-card survey-question-card" aria-labelledby="education-title">
+                    <fieldset class="choice-question">
+                        <legend id="education-title"><span class="subquestion-number">02.2</span> Which of the following best describes your highest level of educational achievement? <span aria-hidden="true">*</span></legend>
+                        <label class="choice-row"><input type="radio" name="education" value="no-high-school" required><span>Did not finish high school</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="no-high-school-vocational"><span>Did not finish high school, but completed a technical or vocational programme</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="high-school"><span>High school graduate or equivalent</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="high-school-vocational"><span>Completed high school and a technical or vocational programme</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="less-than-two-years-college"><span>Less than two years of college</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="two-years-college"><span>Two years of college or more, including an associate degree or equivalent</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="college-graduate"><span>College graduate (four- or five-year programme)</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="masters"><span>Master’s degree or other postgraduate training</span></label>
+                        <label class="choice-row"><input type="radio" name="education" value="doctorate"><span>Doctoral or professional degree</span></label>
+                    </fieldset>
+                </section>
+
+                <section class="survey-card survey-section-header" aria-labelledby="feelings-title">
+                    <div class="survey-card-heading">
+                        <span class="section-number">03</span>
+                        <div><h2 id="feelings-title">Feelings and technology</h2><p>Consider how each statement relates to your life.</p></div>
+                    </div>
+                </section>
+
+                <section class="survey-card survey-question-card scale-block" aria-labelledby="personal-feelings-title">
+                    <h3 class="question-block-title" id="personal-feelings-title"><span class="subquestion-number">03.1</span> Feelings about myself</h3>
+                    <p class="question-label">Indicate how true each statement is for you.</p>
+                    <div class="scale-key scale-key-7" aria-hidden="true"><span><b>1</b><small>Not at all true</small></span><span><b>2</b></span><span><b>3</b></span><span><b>4</b><small>Somewhat true</small></span><span><b>5</b></span><span><b>6</b></span><span><b>7</b><small>Very true</small></span></div>
+                    <div id="general-competence-items"></div>
+                </section>
+
+                <section class="survey-card survey-question-card scale-block" aria-labelledby="technology-feelings-title">
+                    <h3 class="question-block-title" id="technology-feelings-title"><span class="subquestion-number">03.2</span> Feelings about technology use</h3>
+                    <p class="question-label">Indicate how much you agree or disagree with each statement about technology.</p>
+                    <div class="scale-key scale-key-7" aria-hidden="true"><span><b>1</b><small>Strongly disagree</small></span><span><b>2</b></span><span><b>3</b></span><span><b>4</b><small>Neither agree nor disagree</small></span><span><b>5</b></span><span><b>6</b></span><span><b>7</b><small>Strongly agree</small></span></div>
+                    <div id="technology-items"></div>
+                </section>
+
+                <section class="survey-card survey-section-header" aria-labelledby="ai-title">
+                    <div class="survey-card-heading">
+                        <span class="section-number">04</span>
+                        <div><h2 id="ai-title">Artificial intelligence</h2><p>Consider your general views about artificial intelligence.</p></div>
+                    </div>
+                </section>
+
+                <section class="survey-card survey-question-card scale-block" aria-labelledby="ai-views-title">
+                    <h3 class="question-block-title" id="ai-views-title"><span class="subquestion-number">04.1</span> Views about artificial intelligence</h3>
+                    <p class="definition-text"><strong>Artificial intelligence (AI)</strong> refers to technology that enables computers and machines to simulate human learning, comprehension, problem-solving, decision-making, creativity and autonomy.</p>
+                    <p class="question-label">Indicate how much you agree or disagree with each statement.</p>
+                    <div class="scale-key scale-key-5" aria-hidden="true"><span><b>1</b><small>Strongly disagree</small></span><span><b>2</b></span><span><b>3</b><small>Neutral</small></span><span><b>4</b></span><span><b>5</b><small>Strongly agree</small></span></div>
+                    <div id="ai-attitude-items"></div>
+                </section>
+
+                <div class="survey-actions">
+                    <p id="initial-form-error" class="form-error" role="alert" hidden>Please complete all required questions before submitting.</p>
+                    <button class="survey-submit" id="submit-initial-questionnaire" type="submit">Submit responses</button>
+                </div>
+            </div>
+        </form>
+
+        <section id="initial-survey-success" class="survey-card survey-success" hidden tabindex="-1">
+            <p class="survey-step">Questionnaire complete</p>
+            <h2>Thank you</h2>
+            <p>Your initial responses were submitted successfully.</p>
+            <a class="survey-submit survey-link-button" href="vinheta.html">Continue to the game</a>
+        </section>
+    </main>
 
     <script>
-    
-        var loadCount = 0;
-        var iframe = document.getElementById('gform');
+        if (sessionStorage.getItem("haicConsentGiven") !== "true") {
+            window.location.replace("consentform.html" + window.location.search);
+        }
 
-        iframe.onload = function () {
-            loadCount++;
+        var generalCompetenceItems = [
+            ["generalCompetence1", "Often, I do not feel very competent."],
+            ["generalCompetence2", "People I know tell me I am good at what I do."],
+            ["generalCompetence3", "I have been able to learn interesting new skills recently."],
+            ["generalCompetence4", "Most days, I feel a sense of accomplishment from what I do."],
+            ["generalCompetence5", "In my life, I do not get much of a chance to show how capable I am."],
+            ["generalCompetence6", "I often do not feel very capable."]
+        ];
 
-            // Ignore the very first load (initial page)
-            if (loadCount > 1) {
-                iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+        var technologyItems = [
+            ["technology1", "Overall, technology helps me feel that I can successfully complete difficult tasks."],
+            ["technology2", "Technology helps me feel capable of achieving my goals."],
+            ["technology3", "Technology helps me improve my abilities."],
+            ["technology4", "Overall, technology makes it difficult for me to overcome challenges."],
+            ["technology5", "Technology makes it difficult for me to achieve my goals."],
+            ["technology6", "Technology makes it difficult for me to improve my abilities."]
+        ];
+
+        var aiAttitudeItems = [
+            ["aiAttitude1", "I am interested in using artificial intelligence systems in my daily life."],
+            ["aiAttitude2", "I find artificial intelligence sinister."],
+            ["aiAttitude3", "Artificial intelligence might take control of people."],
+            ["aiAttitude4", "I think artificial intelligence is dangerous."],
+            ["aiAttitude5", "Artificial intelligence can have positive impacts on people’s well-being."],
+            ["aiAttitude6", "Artificial intelligence is exciting."],
+            ["aiAttitude7", "Much of society will benefit from a future full of artificial intelligence."],
+            ["aiAttitude8", "I would like to use artificial intelligence in my own job."],
+            ["aiAttitude9", "I shiver with discomfort when I think about future uses of artificial intelligence."],
+            ["aiAttitude10", "People like me will suffer if artificial intelligence is used more and more."]
+        ];
+
+        function renderScaleItems(containerId, items, points) {
+            var container = document.getElementById(containerId);
+            items.forEach(function(item) {
+                var fieldset = document.createElement("fieldset");
+                fieldset.className = "scale-question";
+                var legend = document.createElement("legend");
+                legend.className = "visually-hidden";
+                legend.innerHTML = item[1] + ' <span aria-hidden="true">*</span>';
+                fieldset.appendChild(legend);
+
+                var statement = document.createElement("p");
+                statement.className = "scale-item-text";
+                statement.setAttribute("aria-hidden", "true");
+                statement.innerHTML = item[1] + ' <span aria-hidden="true">*</span>';
+                fieldset.appendChild(statement);
+
+                var scale = document.createElement("div");
+                scale.className = "number-scale number-scale-" + points;
+                scale.setAttribute("role", "radiogroup");
+                scale.setAttribute("aria-label", item[1]);
+
+                for (var value = 1; value <= points; value++) {
+                    var label = document.createElement("label");
+                    var input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = item[0];
+                    input.value = String(value);
+                    if (value === 1) input.required = true;
+                    var number = document.createElement("span");
+                    number.textContent = String(value);
+                    label.appendChild(input);
+                    label.appendChild(number);
+                    scale.appendChild(label);
+                }
+                fieldset.appendChild(scale);
+                container.appendChild(fieldset);
+            });
+        }
+
+        renderScaleItems("general-competence-items", generalCompetenceItems, 7);
+        renderScaleItems("technology-items", technologyItems, 7);
+        renderScaleItems("ai-attitude-items", aiAttitudeItems, 5);
+
+        var form = document.getElementById("initial-questionnaire");
+        var prolificId = document.getElementById("initial-prolific-id");
+        var idSection = document.getElementById("initial-id-section");
+        var questionnaireContent = document.getElementById("initial-questionnaire-content");
+        var continueButton = document.getElementById("continue-to-initial-questionnaire");
+        var progressLabel = document.getElementById("survey-progress");
+        var errorMessage = document.getElementById("initial-form-error");
+        var successPanel = document.getElementById("initial-survey-success");
+        var submitButton = document.getElementById("submit-initial-questionnaire");
+        var questionnaireEndpoint = "https://script.google.com/macros/s/AKfycbwJJ30q72StuNVfCbtd1DGNM77sCxUxzQ5LX_7b7SIA7Bl6a2lRZ79zy6tLpmsRja21KQ/exec";
+
+        var prolificIdFromUrl = new URLSearchParams(window.location.search).get("PROLIFIC_PID");
+        if (prolificIdFromUrl) prolificId.value = prolificIdFromUrl;
+
+        continueButton.addEventListener("click", function() {
+            prolificId.value = prolificId.value.trim();
+            if (!prolificId.checkValidity()) {
+                prolificId.reportValidity();
+                return;
             }
+            localStorage.setItem("haicProlificId", prolificId.value);
+            idSection.hidden = true;
+            questionnaireContent.hidden = false;
+            progressLabel.textContent = "Step 1 — questionnaire";
+            document.getElementById("background-title").focus({ preventScroll: true });
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
 
-            // Redirect after final submission (adjust number if needed)
-            if (loadCount > 3) {
-                document.location.href = "vinheta.html";
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            if (!form.checkValidity()) {
+                errorMessage.hidden = false;
+                form.reportValidity();
+                return;
             }
-        };
+            errorMessage.hidden = true;
+            var responses = Object.fromEntries(new FormData(form).entries());
+            responses.submittedAt = new Date().toISOString();
+            localStorage.setItem("haicInitialQuestionnairePreview", JSON.stringify(responses));
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting…";
+
+            try {
+                await fetch(questionnaireEndpoint, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify({ surveyType: "initial", responses: responses })
+                });
+                form.hidden = true;
+                successPanel.hidden = false;
+                successPanel.focus();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } catch (error) {
+                errorMessage.textContent = "Your responses could not be submitted. Please check your connection and try again.";
+                errorMessage.hidden = false;
+                submitButton.disabled = false;
+                submitButton.textContent = "Submit responses";
+            }
+        });
     </script>
 </body>
 </html>

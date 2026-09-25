@@ -39,6 +39,9 @@
                     ? JSON.parse(jsonData)
                     : jsonData;
 
+                // Link each game round to the questionnaires without changing the Unity build.
+                parsedData.prolificId = localStorage.getItem("haicProlificId") || "";
+
                 allGameData.push(parsedData);
                 console.log("✅ Data received from Unity:", parsedData);
                 console.log("Rounds collected:", allGameData.length);
@@ -54,7 +57,7 @@
                 return;
             }
 
-            fetch("https://script.google.com/macros/s/AKfycbyvCgrennpP4PGoHsm5Dezh_KHu-xlyaXKGMxohn3gxTHN8MmhqPjI1SGR7Ps49Xs1FiA/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbzYZ64Fdzj3qepXujfQUqghECuGasb8ArCLTfmnPgZ2VSoK2qS7yuA5ECFE6K8gpMaPFQ/exec", {
                 method: "POST",
                 mode: "no-cors",
                 body: JSON.stringify(allGameData)

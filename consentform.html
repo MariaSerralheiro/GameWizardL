@@ -3,75 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConsentForm</title>
-    <!-- CSS LINK -->
+    <title>HAIC Study — Informed Consent</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <!-- BOOTSTRAP LINK -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    
-   
 </head>
-
-<body>
-    <!-- Logo -->
-    
-    <div class="container mt-2">
-            <div class="row">
-                <div class="col-lg-2 mt-2"><img src="logo_H1.png" class="logo"></div>
-                <div class="col-lg-2"><img src="logoInesc.png" class="logo"></div>
-                <div class="col-lg-2 mt-3"><img src="logoIst.png" class="logo"></div>
-            </div>
-    </div>
-    <br>
-    <div class="container section" id="section3" style="margin-top: 2%;">
-        <div class="container">
-            <div class="row mt-">
-                <div class="col-lg-12">
-                    <h1 style="text-align: center;" class="stepTitle nunito">CONSENT FORM</h1>
-                </div>
-            </div>
-            <div class="row mt-">
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                <div class="col-lg-8">
-                    <p style="text-align: center; margin-top: 5%;">Please read the following so you can proceed with the study</p>
-                </div>
-                <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                <div><hr></div>
-                </div>
+<body class="survey-page">
+    <header class="survey-header">
+        <div class="survey-shell logo-row" aria-label="Study partners">
+            <img src="logo_H1.png" class="logo" alt="HAIC">
+            <img src="logoInesc.png" class="logo" alt="INESC-ID">
+            <img src="logoIst.png" class="logo" alt="Instituto Superior Técnico">
         </div>
+    </header>
 
-        <div>
-            <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdOhXqJfaWR6Q1OHwnYJY6WzHHpibK8wNIqJ85UkOXAYyNvqQ/viewform?embedded=true" width="100%" height="2500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>      
-        </div>
-</div>
+    <main class="survey-shell">
+        <section class="survey-intro consent-intro">
+            <p class="survey-step">Before the study</p>
+            <h1>Informed Consent</h1>
+            <p>Please read the following information carefully before deciding whether to participate.</p>
+        </section>
 
+        <article class="survey-card consent-document">
+            <section>
+                <h2>Study information</h2>
+                <p>You are invited to participate in a research study on human–AI interaction.</p>
+                <p>You will be asked to complete a pre-study questionnaire and then take part in a collaborative game with an AI. In the game, you will collaborate with the AI to capture demons accidentally summoned by a wizard by selecting the appropriate spells for each demon. After completing the game, you will be asked to complete a post-study questionnaire.</p>
+            </section>
+
+            <section>
+                <h2>Research team</h2>
+                <p>Prof. Rui Prada, Dr Carla Pacheco, Dr Filipa Correia and Margarida Serralheiro.</p>
+                <p>INESC-ID and Instituto Superior Técnico, Universidade de Lisboa.</p>
+            </section>
+
+            <section>
+                <h2>Study objective and data processing purpose</h2>
+                <p>The purpose of this study is to investigate human–AI collaboration in a game-based context and to collect quantitative and qualitative data about participants’ experiences during the collaboration.</p>
+            </section>
+
+            <section>
+                <h2>Who can participate</h2>
+                <p>Participants must be at least 18 years old and proficient in English.</p>
+            </section>
+
+            <section>
+                <h2>Voluntary participation</h2>
+                <p>Your participation is voluntary, and you can withdraw from the study at any time. There will be no penalty if you decide to withdraw.</p>
+            </section>
+
+            <section>
+                <h2>Procedure</h2>
+                <p>Participation will take approximately 20 minutes and consists of:</p>
+                <ol>
+                    <li>A short questionnaire before the task.</li>
+                    <li>An interactive game involving an AI team member.</li>
+                    <li>A short questionnaire after the task.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Risks</h2>
+                <p>The risks of participating in this study are not greater than what you would expect in your daily life.</p>
+            </section>
+
+            <section>
+                <h2>Confidentiality and data retention</h2>
+                <p>All data collected during the study will be de-identified. The information will be securely stored on an INESC-ID server and identified only by a numerical identifier to prevent association with personal data.</p>
+                <p>The collected data will be retained for two years following the conclusion of the study, in accordance with institutional policies and applicable legal requirements. After this period, all data will be securely deleted or irreversibly anonymised. Anonymised data may be retained for scientific and academic purposes, including publications, while ensuring that no participant can be identified.</p>
+            </section>
+
+            <section>
+                <h2>Data controller</h2>
+                <p>The entity responsible for data processing is INESC-ID — Institute for Systems and Computer Engineering: Research and Development, Rua Alves Redol 9, Lisbon, Portugal. The research team will access the data for the purposes of this project.</p>
+                <p>Data protection will be overseen by the INESC-ID Data Protection Officer at <a href="mailto:dpo@inesc-id.pt">dpo@inesc-id.pt</a>.</p>
+            </section>
+
+            <section>
+                <h2>Legal basis and purpose of processing</h2>
+                <p>Your data will be processed based on your consent, which can be withdrawn at any time. The data will be processed to explore levels of performance in human–AI collaboration and will be kept until the end of the project, subject to the retention conditions described above.</p>
+            </section>
+
+            <section>
+                <h2>Recipients and international transfers</h2>
+                <p>Your data may be shared with other universities and research institutes involved in the study. No international data transfers are expected.</p>
+            </section>
+
+            <section>
+                <h2>Your rights</h2>
+                <p>You have the right to ask the data controller for access to your personal data, as well as its rectification, erasure or restriction of processing. Where applicable, you also have the right to object to processing and the right to data portability. You may also submit a complaint to the Portuguese National Data Protection Commission.</p>
+            </section>
+
+            <section>
+                <h2>Questions and contacts</h2>
+                <p>You are free to ask questions at any time during the experiment if you have any concerns. After the experiment, you may contact Margarida Serralheiro at <a href="mailto:margarida.serralheiro@inesc-id.pt">margarida.serralheiro@inesc-id.pt</a> or Rui Prada at <a href="mailto:rui.prada@inesc-id.pt">rui.prada@inesc-id.pt</a>.</p>
+            </section>
+        </article>
+
+        <section class="survey-card consent-decision" aria-labelledby="consent-title">
+            <h2 id="consent-title">Consent to participate</h2>
+            <p>Please select one option.</p>
+
+            <label class="choice-row consent-choice">
+                <input type="radio" name="consentDecision" value="agree">
+                <span>I confirm that I am at least 18 years old, have read and understood the information above, and voluntarily agree to participate in this study.</span>
+            </label>
+            <label class="choice-row consent-choice">
+                <input type="radio" name="consentDecision" value="decline">
+                <span>I do not agree to participate in this study.</span>
+            </label>
+
+            <p id="decline-message" class="consent-decline" role="status" tabindex="-1" hidden>Thank you for your time. As you have chosen not to participate, the study will end here. You may now close this page and return to Prolific.</p>
+            <div class="participant-actions">
+                <button class="survey-submit" id="consent-continue" type="button" disabled>Agree and continue</button>
+            </div>
+        </section>
+    </main>
 
     <script>
-        var load = 0;
-        var iframe = document.getElementById('gform');
+        var choices = document.querySelectorAll('input[name="consentDecision"]');
+        var continueButton = document.getElementById("consent-continue");
+        var declineMessage = document.getElementById("decline-message");
 
-        iframe.onload = function() {
-            load++;
+        choices.forEach(function(choice) {
+            choice.addEventListener("change", function() {
+                var agreed = this.value === "agree";
+                continueButton.disabled = false;
+                continueButton.textContent = agreed ? "Agree and continue" : "Confirm and end participation";
+                continueButton.classList.toggle("consent-decline-button", !agreed);
+                continueButton.hidden = false;
+                declineMessage.hidden = true;
+            });
+        });
 
-            // Scroll page to top of iframe whenever it reloads
-            if (load > 1) {
-            iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+        continueButton.addEventListener("click", function() {
+            var selected = document.querySelector('input[name="consentDecision"]:checked');
+            if (!selected) return;
+            if (selected.value === "decline") {
+                declineMessage.hidden = false;
+                continueButton.hidden = true;
+                declineMessage.focus();
+                return;
             }
-            // Redirect after submission (keep your original logic)
-            if (load > 3) {
-                document.location.href = "initialSurvey.html";
-            }
-        };
-    
+            sessionStorage.setItem("haicConsentGiven", "true");
+            window.location.href = "initialSurvey.html" + window.location.search;
+        });
     </script>
-    
-    
 </body>
 </html>

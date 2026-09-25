@@ -3,68 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAIC Study Step3</title>
-    <!-- CSS LINK -->
+    <title>HAIC Study — Final Questionnaire</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <!-- BOOTSTRAP LINK -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    
-   
 </head>
+<body class="survey-page">
+    <header class="survey-header">
+        <div class="survey-shell logo-row" aria-label="Study partners">
+            <img src="logo_H1.png" class="logo" alt="HAIC">
+            <img src="logoInesc.png" class="logo" alt="INESC-ID">
+            <img src="logoIst.png" class="logo" alt="Instituto Superior Técnico">
+        </div>
+    </header>
 
-<body>
-    <!-- Logo -->
-<div class="container mt-4">
-            <div class="row">
-                <div class="col-lg-2 mt-2"><img src="logo_H1.png" class="logo"></div>
-                <div class="col-lg-2"><img src="logoInesc.png" class="logo"></div>
-                <div class="col-lg-2 mt-3"><img src="logoIst.png" class="logo"></div>
-            </div>
-    </div>
+    <main class="survey-shell">
+        <section class="survey-intro">
+            <p class="survey-step" id="survey-progress">Final step — identification</p>
+            <h1>Final Questionnaire</h1>
+            <p>Please answer the following questions based on your experience playing the game with the AI team member.</p>
+            <p class="survey-meta">All questions marked with <span aria-hidden="true">*</span> are required.</p>
+        </section>
 
-    <div class="container section" id="section3" style="margin-top: 5%;">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <h1 style="text-align: center;" class="stepTitle nunito">STEP 3</h1>
+        <form id="final-questionnaire">
+            <section class="survey-card" aria-labelledby="participant-title">
+                <div class="survey-card-heading">
+                    <span class="section-number">01</span>
+                    <div><h2 id="participant-title">Participant details</h2><p>Enter the same Prolific ID used at the beginning of the study.</p></div>
                 </div>
-            </div>
-            <div class="row mt-2">
-                 <div class="col-lg-2">
-                    <img src="Arrows.png">
+                <div class="text-question">
+                    <label class="question-label" for="prolific-id">Prolific ID <span aria-hidden="true">*</span></label>
+                    <input class="text-input" id="prolific-id" name="prolificId" type="text" autocomplete="off" required>
+                    <p id="prolific-id-error" class="field-error" role="alert" hidden>The Prolific ID does not match the one entered in the initial questionnaire.</p>
                 </div>
-                <div class="col-lg-8">
-                    <p style="text-align: center; margin-top: 2%;">In this final step, please respond to the following questions concerning your satisfaction with your collaboration with the AI during the game.</p>
+                <div class="participant-actions">
+                    <button class="survey-submit" id="continue-to-questionnaire" type="button">Continue to questionnaire</button>
                 </div>
-                 <div class="col-lg-2">
-                    <img src="Arrows.png">
-                </div>
-                <div><hr></div>
-            </div>
+            </section>
 
-            <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSfLO7eMnnmntWy05Zz3z0UkYHcnJQDGVhbJ09VlqCtfG1GIMg/viewform?embedded=true" width="100%" height="1900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-             </div>
-    </div>
+            <div id="questionnaire-content" hidden>
+            <section class="survey-card survey-section-header" aria-labelledby="experience-title">
+                <div class="survey-card-heading">
+                    <span class="section-number">02</span>
+                    <div><h2 id="experience-title" tabindex="-1">Your experience during the game</h2><p>Thinking about both rounds, indicate how true each statement was for you.</p></div>
+                </div>
+            </section>
+
+            <section class="survey-card survey-question-card scale-block" aria-labelledby="competence-title">
+                <h3 class="question-block-title" id="competence-title"><span class="subquestion-number">02.1</span> Feelings of competence</h3>
+                <div class="scale-key scale-key-7" aria-hidden="true"><span><b>1</b><small>Not at all true</small></span><span><b>2</b></span><span><b>3</b></span><span><b>4</b><small>Somewhat true</small></span><span><b>5</b></span><span><b>6</b></span><span><b>7</b><small>Very true</small></span></div>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">I felt confident in my ability to perform well in the game. <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">I felt confident in my ability to perform well in the game. <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Confidence performing well">
+                        <label><input type="radio" name="pcsConfidence" value="1" required><span>1</span></label><label><input type="radio" name="pcsConfidence" value="2"><span>2</span></label><label><input type="radio" name="pcsConfidence" value="3"><span>3</span></label><label><input type="radio" name="pcsConfidence" value="4"><span>4</span></label><label><input type="radio" name="pcsConfidence" value="5"><span>5</span></label><label><input type="radio" name="pcsConfidence" value="6"><span>6</span></label><label><input type="radio" name="pcsConfidence" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">I felt capable of making a significant contribution to the team’s performance. <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">I felt capable of making a significant contribution to the team’s performance. <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Capability to contribute">
+                        <label><input type="radio" name="pcsContribution" value="1" required><span>1</span></label><label><input type="radio" name="pcsContribution" value="2"><span>2</span></label><label><input type="radio" name="pcsContribution" value="3"><span>3</span></label><label><input type="radio" name="pcsContribution" value="4"><span>4</span></label><label><input type="radio" name="pcsContribution" value="5"><span>5</span></label><label><input type="radio" name="pcsContribution" value="6"><span>6</span></label><label><input type="radio" name="pcsContribution" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">I was able to achieve my goals in the game. <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">I was able to achieve my goals in the game. <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Ability to achieve goals">
+                        <label><input type="radio" name="pcsGoals" value="1" required><span>1</span></label><label><input type="radio" name="pcsGoals" value="2"><span>2</span></label><label><input type="radio" name="pcsGoals" value="3"><span>3</span></label><label><input type="radio" name="pcsGoals" value="4"><span>4</span></label><label><input type="radio" name="pcsGoals" value="5"><span>5</span></label><label><input type="radio" name="pcsGoals" value="6"><span>6</span></label><label><input type="radio" name="pcsGoals" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">I felt able to use my skills to meet the challenges of the game. <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">I felt able to use my skills to meet the challenges of the game. <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Ability to meet challenges">
+                        <label><input type="radio" name="pcsChallenges" value="1" required><span>1</span></label><label><input type="radio" name="pcsChallenges" value="2"><span>2</span></label><label><input type="radio" name="pcsChallenges" value="3"><span>3</span></label><label><input type="radio" name="pcsChallenges" value="4"><span>4</span></label><label><input type="radio" name="pcsChallenges" value="5"><span>5</span></label><label><input type="radio" name="pcsChallenges" value="6"><span>6</span></label><label><input type="radio" name="pcsChallenges" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="survey-card survey-question-card" aria-labelledby="relative-performance-title">
+                <fieldset class="choice-question">
+                    <legend id="relative-performance-title"><span class="subquestion-number">02.2</span> Overall, how do you think your performance compared with that of the AI team member? <span aria-hidden="true">*</span></legend>
+                    <label class="choice-row"><input type="radio" name="relativePerformance" value="worse" required><span>I performed <strong>worse</strong> than the AI team member.</span></label>
+                    <label class="choice-row"><input type="radio" name="relativePerformance" value="same"><span>We performed <strong>about the same</strong>.</span></label>
+                    <label class="choice-row"><input type="radio" name="relativePerformance" value="better"><span>I performed <strong>better</strong> than the AI team member.</span></label>
+                    <label class="choice-row"><input type="radio" name="relativePerformance" value="unsure"><span>I am not sure.</span></label>
+                </fieldset>
+            </section>
+
+            <section class="survey-card survey-question-card scale-block" aria-labelledby="ai-performance-title">
+                <h3 class="question-block-title" id="ai-performance-title"><span class="subquestion-number">02.3</span> AI team member’s performance</h3>
+                <div class="scale-key scale-key-7" aria-hidden="true"><span><b>1</b><small>Very poorly</small></span><span><b>2</b></span><span><b>3</b></span><span><b>4</b><small>Neither poorly nor well</small></span><span><b>5</b></span><span><b>6</b></span><span><b>7</b><small>Very well</small></span></div>
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">Overall, how well do you think the AI team member performed? <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">Overall, how well do you think the AI team member performed? <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Perceived AI performance">
+                        <label><input type="radio" name="perceivedAiPerformance" value="1" required><span>1</span></label><label><input type="radio" name="perceivedAiPerformance" value="2"><span>2</span></label><label><input type="radio" name="perceivedAiPerformance" value="3"><span>3</span></label><label><input type="radio" name="perceivedAiPerformance" value="4"><span>4</span></label><label><input type="radio" name="perceivedAiPerformance" value="5"><span>5</span></label><label><input type="radio" name="perceivedAiPerformance" value="6"><span>6</span></label><label><input type="radio" name="perceivedAiPerformance" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="survey-card survey-question-card scale-block" aria-labelledby="performance-satisfaction-title">
+                <h3 class="question-block-title" id="performance-satisfaction-title"><span class="subquestion-number">02.4</span> Satisfaction with performance</h3>
+                <div class="scale-key scale-key-7" aria-hidden="true"><span><b>1</b><small>Very dissatisfied</small></span><span><b>2</b></span><span><b>3</b></span><span><b>4</b><small>Neither satisfied nor dissatisfied</small></span><span><b>5</b></span><span><b>6</b></span><span><b>7</b><small>Very satisfied</small></span></div>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">How satisfied were you with your own performance? <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">How satisfied were you with your own performance? <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Satisfaction with own performance">
+                        <label><input type="radio" name="selfPerformanceSatisfaction" value="1" required><span>1</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="2"><span>2</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="3"><span>3</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="4"><span>4</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="5"><span>5</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="6"><span>6</span></label><label><input type="radio" name="selfPerformanceSatisfaction" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="scale-question">
+                    <legend class="visually-hidden">How satisfied were you with the AI team member’s performance? <span aria-hidden="true">*</span></legend>
+                    <p class="scale-item-text" aria-hidden="true">How satisfied were you with the AI team member’s performance? <span aria-hidden="true">*</span></p>
+                    <div class="number-scale" role="radiogroup" aria-label="Satisfaction with AI performance">
+                        <label><input type="radio" name="aiPerformanceSatisfaction" value="1" required><span>1</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="2"><span>2</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="3"><span>3</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="4"><span>4</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="5"><span>5</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="6"><span>6</span></label><label><input type="radio" name="aiPerformanceSatisfaction" value="7"><span>7</span></label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="survey-card survey-section-header" aria-labelledby="round-title">
+                <div class="survey-card-heading">
+                    <span class="section-number">03</span>
+                    <div><h2 id="round-title">The second round</h2><p>Consider whether the first-round results influenced the way you played.</p></div>
+                </div>
+            </section>
+
+            <section class="survey-card survey-question-card" aria-labelledby="changed-play-title">
+                <fieldset class="choice-question first-question">
+                    <legend id="changed-play-title"><span class="subquestion-number">03.1</span> After seeing the performance results from the first round, did you intentionally change the way you played in the second round? <span aria-hidden="true">*</span></legend>
+                    <label class="choice-row"><input type="radio" name="changedPlay" value="yes" required><span>Yes</span></label>
+                    <label class="choice-row"><input type="radio" name="changedPlay" value="no"><span>No</span></label>
+                    <label class="choice-row"><input type="radio" name="changedPlay" value="unsure"><span>I am not sure.</span></label>
+                </fieldset>
+            </section>
+
+            <section class="survey-card survey-question-card" aria-labelledby="change-explanation-title">
+                <div class="text-question">
+                    <label class="question-label" id="change-explanation-title" for="change-explanation"><span class="subquestion-number">03.2</span> Please explain what, if anything, you changed in the second round and why. If you did not change the way you played, please explain why not. <span aria-hidden="true">*</span></label>
+                    <textarea class="text-area" id="change-explanation" name="changeExplanation" rows="5" required></textarea>
+                </div>
+            </section>
+
+            <section class="survey-card survey-section-header" aria-labelledby="overall-title">
+                <div class="survey-card-heading">
+                    <span class="section-number">04</span>
+                    <div><h2 id="overall-title">Overall experience</h2><p>Reflect on your experience of playing with the AI team member.</p></div>
+                </div>
+            </section>
+
+            <section class="survey-card survey-question-card" aria-labelledby="overall-experience-title">
+                <div class="text-question">
+                    <label class="question-label" id="overall-experience-title" for="overall-experience"><span class="subquestion-number">04.1</span> How would you describe your experience of playing with the AI team member? <span aria-hidden="true">*</span></label>
+                    <textarea class="text-area" id="overall-experience" name="overallExperience" rows="6" required></textarea>
+                </div>
+            </section>
+
+            <div class="survey-actions">
+                <p id="form-error" class="form-error" role="alert" hidden>Please complete all required questions before submitting.</p>
+                <button class="survey-submit" id="submit-final-questionnaire" type="submit">Submit responses</button>
+            </div>
+            </div>
+        </form>
+
+        <section id="survey-success" class="survey-card survey-success" hidden tabindex="-1">
+            <p class="survey-step">Questionnaire complete</p>
+            <h2>Thank you for participating</h2>
+            <p>Your responses were submitted successfully.</p>
+        </section>
+    </main>
 
     <script>
-    
-        var load = 0;
-        var iframe = document.getElementById('gform');
+        var form = document.getElementById("final-questionnaire");
+        var errorMessage = document.getElementById("form-error");
+        var successPanel = document.getElementById("survey-success");
+        var prolificId = document.getElementById("prolific-id");
+        var participantSection = document.querySelector('[aria-labelledby="participant-title"]');
+        var questionnaireContent = document.getElementById("questionnaire-content");
+        var continueButton = document.getElementById("continue-to-questionnaire");
+        var progressLabel = document.getElementById("survey-progress");
+        var prolificIdError = document.getElementById("prolific-id-error");
+        var submitButton = document.getElementById("submit-final-questionnaire");
+        var questionnaireEndpoint = "https://script.google.com/macros/s/AKfycbwJJ30q72StuNVfCbtd1DGNM77sCxUxzQ5LX_7b7SIA7Bl6a2lRZ79zy6tLpmsRja21KQ/exec";
 
-        iframe.onload = function () {
-            load++;
+        continueButton.addEventListener("click", function() {
+            prolificId.value = prolificId.value.trim();
+            if (!prolificId.checkValidity()) {
+                prolificId.reportValidity();
+                return;
+            }
 
-            // Always scroll to the top of the iframe when it reloads
-            iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+            var initialProlificId = localStorage.getItem("haicProlificId");
+            if (initialProlificId && prolificId.value.toLowerCase() !== initialProlificId.trim().toLowerCase()) {
+                prolificIdError.hidden = false;
+                prolificId.focus();
+                return;
+            }
 
-            /* // Redirect after final submission
-            if (load > 3) {
-                document.location.href = "vinheta.html";
-            } */
-        };
+            prolificIdError.hidden = true;
+            participantSection.hidden = true;
+            questionnaireContent.hidden = false;
+            progressLabel.textContent = "Final step — questionnaire";
+            document.getElementById("experience-title").focus({ preventScroll: true });
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            if (!form.checkValidity()) {
+                errorMessage.hidden = false;
+                form.reportValidity();
+                return;
+            }
+            errorMessage.hidden = true;
+            var responses = Object.fromEntries(new FormData(form).entries());
+            responses.submittedAt = new Date().toISOString();
+            localStorage.setItem("haicFinalQuestionnairePreview", JSON.stringify(responses));
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting…";
+
+            try {
+                await fetch(questionnaireEndpoint, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify({ surveyType: "final", responses: responses })
+                });
+                form.hidden = true;
+                successPanel.hidden = false;
+                successPanel.focus();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } catch (error) {
+                errorMessage.textContent = "Your responses could not be submitted. Please check your connection and try again.";
+                errorMessage.hidden = false;
+                submitButton.disabled = false;
+                submitButton.textContent = "Submit responses";
+            }
+        });
     </script>
 </body>
 </html>

@@ -253,3 +253,114 @@ a.disabled {
   font-style: normal;
   
 }
+
+/* Final questionnaire */
+.survey-page { margin: 0; min-height: 100vh; background: #f5f8fc; color: #051e3c; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.survey-shell { width: min(920px, calc(100% - 32px)); margin: 0 auto; }
+.survey-header { padding: 22px 0; background: #fff; border-bottom: 1px solid #dfe7f1; }
+.logo-row { display: flex; align-items: center; gap: 34px; }
+.survey-header .logo { width: auto; max-width: 112px; height: 52px; object-fit: contain; }
+.survey-intro { padding: 64px 4px 30px; }
+.survey-step { margin: 0 0 8px; color: #134ec1; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.survey-intro h1, .survey-success h2 { margin: 0 0 12px; color: #051e3c; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: clamp(2.15rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; }
+.survey-intro > p:not(.survey-step):not(.survey-meta) { max-width: 680px; margin: 0; color: #42536b; font-size: 1.08rem; font-weight: 500; line-height: 1.65; }
+.survey-meta { margin: 14px 0 0; color: #6c7b8e; font-size: .9rem; }
+.survey-meta span, .question-label span, legend span { color: #c33e3e; }
+.local-preview { margin-bottom: 18px; padding: 12px 16px; border: 1px solid #efc76c; border-radius: 10px; background: #fff8e7; color: #674a08; font-size: .9rem; line-height: 1.45; }
+.survey-card { margin-bottom: 22px; padding: clamp(24px, 5vw, 44px); border: 1px solid #dfe7f1; border-radius: 18px; background: #fff; box-shadow: 0 10px 30px rgba(5,30,60,.06); }
+.survey-card-heading { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 34px; }
+.survey-section-header { padding-top: 28px; padding-bottom: 28px; }
+.survey-section-header .survey-card-heading { margin-bottom: 0; }
+.survey-question-card { padding-top: 26px; padding-bottom: 26px; }
+.survey-question-card .choice-question,
+.survey-question-card .choice-question.first-question,
+.survey-question-card .text-question { margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.question-block-title { margin: 0 0 18px; color: #102f55; font-size: 1.05rem; font-weight: 650; line-height: 1.5; }
+.scale-block > .question-label { margin-bottom: 10px; color: #405675; font-weight: 500; }
+.scale-block > .scale-key { margin-bottom: 20px; }
+.section-number { display: grid; flex: 0 0 62px; width: 62px; height: 62px; place-items: center; border-radius: 50%; background: #eaf3ff; color: #134ec1; font-size: 0.9rem; font-weight: 800; }
+.survey-card h2 { margin: 0 0 5px; color: #051e3c; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 1.45rem; font-weight: 650; line-height: 1.25; }
+.survey-card-heading p { margin: 0; color: #66758a; font-weight: 500; line-height: 1.5; }
+.question-label, .scale-question legend, .choice-question legend { display: block; width: 100%; margin-bottom: 14px; color: #102f55; font-size: 1rem; font-weight: 600; line-height: 1.55; }
+.text-input, .text-area { width: 100%; box-sizing: border-box; border: 1px solid #b9c7d8; border-radius: 10px; background: #fff; color: #051e3c; font: inherit; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.text-input { max-width: 460px; padding: 13px 14px; }
+.text-area { min-height: 140px; padding: 14px; resize: vertical; line-height: 1.55; }
+.text-input:focus, .text-area:focus { outline: none; border-color: #134ec1; box-shadow: 0 0 0 3px rgba(19,78,193,.13); }
+.scale-key { display: grid; gap: 0; margin: 0 0 14px; padding: 10px 14px; border-radius: 9px; background: #f2f6fb; color: #52657c; font-size: .76rem; line-height: 1.25; }
+.scale-key-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.scale-key-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.scale-key span { display: flex; min-width: 0; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
+.scale-key b { color: #17395e; font-size: .82rem; }
+.scale-key span:has(small) b { display: grid; width: 26px; height: 26px; place-items: center; border: 1px solid #9eb3cc; border-radius: 50%; background: #fff; }
+.scale-key small { color: #60728a; font-size: inherit; font-weight: 500; }
+.scale-question, .choice-question { min-width: 0; margin: 14px 0; padding: 22px; border: 1px solid #e1e8f0; border-radius: 12px; background: #fbfcfe; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.scale-block .scale-question { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr); gap: 24px; align-items: center; padding: 14px 16px; }
+.scale-item-text { margin: 0; color: #243f60; font-size: .95rem; font-weight: 500; line-height: 1.45; }
+.scale-item-text span { color: #c33e3e; }
+.scale-block .number-scale { gap: 7px; }
+.scale-block .number-scale span { min-height: 40px; }
+.text-question { margin: 14px 0; padding: 22px; border: 1px solid #e1e8f0; border-radius: 12px; background: #fbfcfe; }
+.choice-question.first-question { padding-top: 22px; border: 1px solid #e1e8f0; }
+.question-group { margin: 34px 0 16px; padding: 24px 0 0; border-top: 2px solid #dbe5f0; }
+.number-scale { display: grid; grid-template-columns: repeat(7, minmax(42px, 1fr)); gap: 10px; }
+.number-scale-5 { grid-template-columns: repeat(5, minmax(42px, 1fr)); }
+.number-scale label { position: relative; cursor: pointer; }
+.number-scale input { position: absolute; opacity: 0; pointer-events: none; }
+.number-scale span { display: grid; min-height: 46px; place-items: center; border: 1px solid #bac9db; border-radius: 9px; background: #fff; color: #17395e; font-weight: 700; transition: 150ms ease; }
+.number-scale label:hover span { border-color: #5683d6; background: #f2f7ff; }
+.number-scale input:focus-visible + span { outline: 3px solid rgba(19,78,193,.2); outline-offset: 2px; }
+.number-scale input:checked + span { border-color: #134ec1; background: #134ec1; color: #fff; }
+.choice-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; padding: 14px 16px; border: 1px solid #d4deea; border-radius: 10px; color: #243f60; cursor: pointer; line-height: 1.45; transition: 150ms ease; }
+.choice-row:last-child { margin-bottom: 0; }
+.choice-row:hover { border-color: #7c9fdc; background: #f7faff; }
+.choice-row:has(input:checked) { border-color: #134ec1; background: #eef4ff; }
+.choice-row input { flex: 0 0 auto; margin-top: 3px; accent-color: #134ec1; }
+.background-questions .choice-question { margin: 0; padding: 0 0 32px; border: 0; border-radius: 0; background: transparent; }
+.background-questions .choice-question + .choice-question { padding-top: 32px; border-top: 2px solid #dbe5f0; }
+.background-questions .choice-question legend { margin-bottom: 18px; color: #243f60; font-size: 1rem; font-weight: 500; }
+.subquestion-number { display: inline-block; margin-right: 8px; color: #134ec1 !important; font-size: .78rem; font-weight: 750; letter-spacing: .04em; }
+.background-questions .choice-row { background: #fbfcfe; }
+.survey-actions { padding: 10px 0 70px; text-align: center; }
+.participant-actions { margin-top: 28px; }
+.definition-text { margin: 0 0 28px; padding: 16px 18px; border-left: 3px solid #7c9fdc; background: #f5f8fc; color: #42536b; line-height: 1.6; }
+.survey-link-button { display: inline-block; margin-top: 18px; text-decoration: none; }
+.survey-submit { min-width: 230px; padding: 15px 30px; border: 0; border-radius: 999px; background: linear-gradient(90deg,#f7b23b,#f0856f); box-shadow: 0 8px 22px rgba(240,133,111,.25); color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 1rem; font-weight: 650; cursor: pointer; transition: transform 150ms ease, box-shadow 150ms ease; }
+.survey-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(240,133,111,.32); }
+.survey-submit:focus-visible { outline: 3px solid rgba(19,78,193,.25); outline-offset: 4px; }
+.form-error { margin: 0 0 14px; color: #a22929; font-weight: 600; }
+.field-error { margin: 10px 0 0; color: #a22929; font-size: .9rem; font-weight: 600; }
+.survey-success { margin-top: 28px; text-align: center; }
+.survey-success:focus { outline: none; }
+.consent-intro { padding-bottom: 24px; }
+.consent-document { padding-top: 22px; }
+.consent-document section { padding: 24px 0; border-bottom: 1px solid #e5ebf2; }
+.consent-document section:last-child { border-bottom: 0; }
+.consent-document h2, .consent-decision h2 { margin: 0 0 10px; color: #102f55; font-size: 1.2rem; font-weight: 650; }
+.consent-document p, .consent-document li, .consent-decision > p { color: #42536b; line-height: 1.68; }
+.consent-document p { margin: 0 0 10px; }
+.consent-document p:last-child { margin-bottom: 0; }
+.consent-document ol { margin: 8px 0 0; padding-left: 24px; }
+.consent-document li { margin-bottom: 5px; }
+.consent-document a { color: #134ec1; }
+.consent-choice { margin-top: 12px; }
+.consent-decline { margin: 18px 0 0; color: #a22929; font-weight: 600; line-height: 1.5; }
+.consent-decline-button { background: #66758a; box-shadow: none; }
+.consent-decline-button:hover { box-shadow: 0 8px 18px rgba(66,83,107,.2); }
+.survey-submit:disabled { background: #bdc6d1; box-shadow: none; cursor: not-allowed; transform: none; }
+
+@media (max-width: 640px) {
+  .survey-shell { width: min(100% - 20px, 920px); }
+  .survey-header { padding: 14px 0; }
+  .logo-row { justify-content: space-between; gap: 14px; }
+  .survey-header .logo { max-width: 84px; height: 42px; }
+  .survey-intro { padding-top: 42px; }
+  .survey-card { border-radius: 14px; }
+  .survey-card-heading { gap: 12px; }
+  .section-number { flex-basis: 36px; width: 36px; height: 36px; }
+  .scale-key { font-size: .72rem; }
+  .number-scale { gap: 5px; }
+  .number-scale span { min-height: 42px; border-radius: 7px; }
+  .scale-block .scale-question { grid-template-columns: 1fr; gap: 12px; }
+  .scale-question, .choice-question, .text-question { padding: 18px 14px; }
+}
