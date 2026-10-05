@@ -367,3 +367,11 @@ a.disabled {
   .scale-block .scale-question { grid-template-columns: 1fr; gap: 12px; }
   .scale-question, .choice-question, .text-question { padding: 18px 14px; }
 }
+
+.buttonStep1:disabled {
+    opacity: 1;
+    background: #bcc6d2;
+    border: none;
+    cursor: wait;
+    box-shadow: none;
+}
